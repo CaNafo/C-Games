@@ -1,0 +1,537 @@
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<conio.h>
+#include<time.h>
+int arena(int boja);
+int bodovig();
+int bodovid();
+int bodovil();
+int bodovide();
+void odlozi(clock_t a)
+{
+	clock_t start;
+	start = clock();
+	while (clock() - start<a)
+	{
+
+	}
+}
+char bodovi1[1][16]=
+{"XXXXXXXXXXXXXXXX"};
+char bodovi2[6][1]=
+{"X",
+ "X",
+ "X",
+ "X",
+ "X",
+ "X"};
+char arena1[20][17] =                                    
+{"XXXXXXXXXXXXXXXXX",
+ "X          b    X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X               X",
+ "X o p           X",
+ "X  m            X",
+ "X o p           X",
+ "XXXXXXXXXXXXXXXXX"};
+ 
+
+
+int main()
+{   SetConsoleTitle("Tetris formule V1.1 by CaNa...");
+    int p1=16,m1=2,p2=16,m2=4,p3=17,m3=3,p4=18,m4=2,p5=18,m5=4;
+    int aly1=18,alym1=1,aly2=1,alym2=3,aly3=2,alym3=2,aly4=3,alym4=1,aly5=3,alym5=3,level=0,odl=100,boja=15;
+    int nivo=1,brzina=0,nes=1,nes1=11;
+    char a;
+    int random;
+    printf("\n\n\n\nDobro dosli u igricu Formule v1.1 da pocnete igru pritisnite bilo koje dugme\n(Kontrolna slova 'a' i 'd')....\nIf you want to enter the game (Control buttons are 'a' and 'd'):  ");
+    system("pause");
+    system("cls");
+  printf("\n\n\t\t...Tetris formule V1.1....");
+    printf("\n\n\n\n\t\t\t\t\n\n\n\n\n\n\t\t\t\tNivo: %d\n\t\t\t\tBrzina + %d\n",nivo,brzina);
+ 
+      
+  while(1)
+  
+  {        
+           
+                       
+           srand(time(NULL));
+           
+           
+          if(arena1[aly1+1][alym1]=='o' || arena1[aly1+1][alym1]=='p' || arena1[aly1+1][alym1]=='m')
+          {
+                  
+              printf("\n\n\n\t\t\tKRAJ IGRE!!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              odlozi(300);
+              break;  
+                               
+                                        
+          }
+           
+           else if(arena1[aly2+1][alym2]=='o' || arena1[aly2+1][alym2]=='p' || arena1[aly2+1][alym2]=='m')
+          {
+                  
+              printf("\n\n\n\t\t\tKRAJ IGRE!!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              odlozi(300);
+              break;  
+                               
+                                        
+          }
+           else if(arena1[aly3+1][alym3]=='o' || arena1[aly3+1][alym3]=='p' || arena1[aly3+1][alym3]=='m')
+          {
+                  
+              printf("\n\n\n\t\t\tKRAJ IGRE!!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              odlozi(300);
+              break;  
+                               
+                                        
+          }
+           else if(arena1[aly4+1][alym4]=='o' || arena1[aly4+1][alym4]=='p' || arena1[aly4+1][alym4]=='m')
+          {
+                  
+              printf("\n\n\n\t\t\tKRAJ IGRE!!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              odlozi(300);
+              break;  
+              }
+                else if(arena1[aly5+1][alym5]=='o' || arena1[aly5+1][alym5]=='p' || arena1[aly5+1][alym5]=='m')
+          {
+                  
+              printf("\n\n\n\t\t\tKRAJ IGRE!!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              odlozi(300);
+              break;  
+              }
+                    
+                    else if(arena1[nes+1][nes1]=='o' || arena1[nes+1][nes1]=='p' || arena1[nes+1][nes1]=='m')
+          {
+                  
+              printf("\n\n\n\t\t\tKRAJ IGRE!!!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+              odlozi(300);
+              break;  
+              }           
+              else
+              {
+           
+           if(nivo>=3){
+                      if(arena1[nes+1][nes1]==' ')
+                      {                       
+                                              arena1[nes+1][nes1]=arena1[nes][nes1];
+                                              arena1[nes][nes1]=' ';
+                                              nes++;
+                                             
+                                             
+                      }
+                      else 
+                                             
+                      {
+                                          arena1[nes][nes1]=' ';
+                                      
+                                          if(random==0 || random==1 || random==2)
+{
+arena1[1][11]='b';
+ nes=1;
+nes1=11;
+}
+else
+{
+    arena1[1][4]='b';
+nes1=4;                                         
+ nes=1;
+}
+                      }
+                      }
+           
+           
+                 if(arena1[aly1+1][alym1]==' ')
+                 {
+                 arena1[aly1+1][alym1]=arena1[aly1][alym1];
+                 arena1[aly1][alym1]=' ';
+                  aly1++;
+                  
+                 }
+                 else
+                 {
+                     arena1[aly1][alym1]=' ';
+                    
+                      
+                      
+                 }
+                 if(arena1[aly2+1][alym2]==' ')
+                 {
+                 arena1[aly2+1][alym2]=arena1[aly2][alym2];
+                 arena1[aly2][alym2]=' ';
+                 aly2++;
+                 }
+                 else
+                 {
+                     arena1[aly2][alym2]=' ';
+                 }
+                 if(arena1[aly3+1][alym3]==' ')
+                 {
+                 arena1[aly3+1][alym3]=arena1[aly3][alym3];
+                 arena1[aly3][alym3]=' ';
+                 aly3++;
+                 }
+                 else
+                 {
+                     arena1[aly3][alym3]=' ';
+                 }
+                 if(arena1[aly4+1][alym4]==' ')
+                 {
+                 arena1[aly4+1][alym4]=arena1[aly4][alym4];
+                 arena1[aly4][alym4]=' ';
+                 aly4++;
+                 }
+                 else
+                 {
+                     arena1[aly4][alym4]=' ';
+                 }
+                 if(arena1[aly5+1][alym5]==' ')
+                 {
+                 arena1[aly5+1][alym5]=arena1[aly5][alym5];
+                 arena1[aly5][alym5]=' ';
+                 aly5++; 
+                 }
+                 else
+                 {
+                     arena1[aly5][alym5]=' ';
+                 }
+                 
+                 
+                
+                 
+                 }
+                
+                     if(kbhit())
+      {
+                
+             a=getch();
+             if((a=='d' || a=='D') && arena1[p5][m5+1]!='X' )
+             {
+                       arena1[p1][m1+1]=arena1[p1][m1];
+                       arena1[p1][m1]=' ';
+                       arena1[p2][m2+1]=arena1[p2][m2];
+                       arena1[p2][m2]=' ';
+                       arena1[p3][m3+1]=arena1[p3][m3];
+                       arena1[p3][m3]=' ';
+                       arena1[p4][m4+1]=arena1[p4][m4];
+                       arena1[p4][m4]=' ';
+                       arena1[p5][m5+1]=arena1[p5][m5];
+                       arena1[p5][m5]=' ';
+                       
+                       m1++;
+                       m2++;
+                       m3++;
+                       m4++;
+                       m5++;
+                       }    
+                       else if((a=='a' || a=='A' )&& arena1[p1][m1-1]!='X' )
+             {
+                       arena1[p1][m1-1]=arena1[p1][m1];
+                       arena1[p1][m1]=' ';
+                       arena1[p2][m2-1]=arena1[p2][m2];
+                       arena1[p2][m2]=' ';
+                       arena1[p3][m3-1]=arena1[p3][m3];
+                       arena1[p3][m3]=' ';
+                       arena1[p4][m4-1]=arena1[p4][m4];
+                       arena1[p4][m4]=' ';
+                       arena1[p5][m5-1]=arena1[p5][m5];
+                       arena1[p5][m5]=' ';
+                       
+                       m1--;
+                       m2--;
+                       m3--;
+                       m4--;
+                       m5--;
+                       } 
+                       
+                       
+                 
+                 
+                 }    
+          random=rand()%6;
+          bodovig();
+          bodovid();
+          bodovil();
+          bodovide();
+  arena(boja);
+   
+  
+  if(aly1>=18)
+  
+  {
+              
+              level++;
+             
+              
+              if(random==2 || random ==0)
+              {
+                      arena1[1][6]='a';
+                      aly1=1;
+                      alym1=6;
+                      arena1[1][8]='a';
+                      aly2=1;
+                      alym2=8;
+                      arena1[2][7]='a';
+                      aly3=2;
+                      alym3=7;
+                      arena1[3][6]='a';
+                      aly4=3;
+                      alym4=6;
+                      arena1[3][8]='a';
+                      aly5=3;
+                      alym5=8;
+                      
+              }
+              
+              if(random==1 || random==4)
+              {
+                      arena1[1][1]='a';
+                      aly1=1;
+                      alym1=1;
+                      arena1[1][3]='a';
+                      aly2=1;
+                      alym2=3;
+                      arena1[2][2]='a';
+                      aly3=2;
+                      alym3=2;
+                      arena1[3][1]='a';
+                      aly4=3;
+                      alym4=1;
+                      arena1[3][3]='a';
+                      aly5=3;
+                      alym5=3;
+                      
+              }
+              if(random==3 || random==5)
+              {
+                      arena1[1][12]='a';
+                      aly1=1;
+                      alym1=12;
+                      arena1[1][14]='a';
+                      aly2=1;
+                      alym2=14;
+                      arena1[2][13]='a';
+                      aly3=2;
+                      alym3=13;
+                      arena1[3][12]='a';
+                      aly4=3;
+                      alym4=12;
+                      arena1[3][14]='a';
+                      aly5=3;
+                      alym5=14;
+                      
+              }
+             
+                    
+  }
+  if(level==10 && odl>50)
+  {
+               nivo++;
+               brzina=brzina+5;
+               system("cls");
+               printf("\n\n\t\t...Tetris formule V1.1....");
+                printf("\n\n\n\n\t\t\t\t\n\n\n\n\n\n\t\t\t\tNivo: %d\n\t\t\t\tBrzina + %d\n",nivo,brzina);
+               odl=odl-5;
+               level=0;
+               if(boja>1)
+               boja--;
+               else boja++;
+               
+  }
+  else if(level==10)
+  {
+               nivo++;
+               brzina=brzina+1;
+               system("cls");
+               printf("\n\n\t\t...Tetris formule V1.1....");
+                printf("\n\n\n\n\t\t\t\t\n\n\n\n\n\n\t\t\t\tNivo: %d\n\t\t\t\tBrzina + %d\n",nivo,brzina);
+               if(odl>45)
+               {
+               odl=odl-1;
+               }
+               level=0;
+               if(boja>1)
+               boja--;
+               else boja++;
+               
+  }
+   odlozi(odl);
+  }
+  
+  system("PAUSE");	
+  
+}
+int arena(int boja)
+{
+     	int i,j;
+	int color = 3,v=1,rezultat=10;
+	char U;
+
+	
+	CHAR_INFO gridbuffer[340];
+	COORD zerozero = { 0,0 }, gridsz = { 17,20 };
+	SMALL_RECT gridrect = { 10,5,27,25 };
+	HANDLE out;
+	out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+for (i = 0; i<20; i++)
+	{
+		for (j = 0; j<17; j++)
+		{
+			gridbuffer[j + 17 * i].Attributes = color;
+			if (arena1[i][j] == 'X')
+				gridbuffer[j + 17 * i].Char.AsciiChar =219;
+				else if (arena1[i][j] == ' ')
+				gridbuffer[j + 17 * i].Char.AsciiChar = ' ';
+				else if (arena1[i][j] == 'o')
+			{
+				gridbuffer[j + 17 * i].Char.AsciiChar = 17;
+				gridbuffer[j + 17 * i].Attributes = 12;
+			}
+				else if (arena1[i][j] == 'm')
+			{
+				gridbuffer[j + 17 * i].Char.AsciiChar = 254;
+				gridbuffer[j + 17 * i].Attributes = 12;
+			}
+				else if (arena1[i][j] == 'p')
+			{
+				gridbuffer[j + 17 * i].Char.AsciiChar = 16;
+				gridbuffer[j + 17 * i].Attributes = 12;
+			}
+				else if (arena1[i][j] == 'a')
+			{
+				gridbuffer[j + 17 * i].Char.AsciiChar = 15;
+				gridbuffer[j + 17 * i].Attributes = boja;
+			}
+				else if (arena1[i][j] == 'b')
+			{
+				gridbuffer[j + 17 * i].Char.AsciiChar = 9;
+				gridbuffer[j + 17 * i].Attributes = boja-1;
+			}
+}
+}
+
+WriteConsoleOutput(out, gridbuffer, gridsz, zerozero, &gridrect);
+     }
+int bodovig()
+{
+     	
+	
+int i,j;
+	
+	CHAR_INFO gridbuffer[16];
+	COORD zerozero = { 0,0 }, gridsz = { 16,1 };
+	SMALL_RECT gridrect = { 29,10,46,11 };
+	HANDLE out;
+	out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+for (i = 0; i<1; i++)
+	{
+		for (j = 0; j<16; j++)
+		{
+			gridbuffer[j + 16 * i].Attributes = 6;
+			if (bodovi1[i][j] == 'X')
+				gridbuffer[j + 16 * i].Char.AsciiChar =219;
+				
+				
+        }
+}
+
+WriteConsoleOutput(out, gridbuffer, gridsz, zerozero, &gridrect);
+     }
+
+int bodovid()
+{
+     	
+	
+int i,j;
+	
+	CHAR_INFO gridbuffer[16];
+	COORD zerozero = { 0,0 }, gridsz = { 16,1 };
+	SMALL_RECT gridrect = { 29,15,45,16 };
+	HANDLE out;
+	out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+for (i = 0; i<1; i++)
+	{
+		for (j = 0; j<16; j++)
+		{
+			gridbuffer[j + 16 * i].Attributes = 6;
+			if (bodovi1[i][j] == 'X')
+				gridbuffer[j + 16 * i].Char.AsciiChar =219;
+				
+				
+        }
+}
+
+WriteConsoleOutput(out, gridbuffer, gridsz, zerozero, &gridrect);
+     }
+
+int bodovil()
+{
+     	
+	
+int i,j;
+	
+	CHAR_INFO gridbuffer[6];
+	COORD zerozero = { 0,0 }, gridsz = { 1,6 };
+	SMALL_RECT gridrect = { 29,10,30,16 };
+	HANDLE out;
+	out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+for (i = 0; i<6; i++)
+	{
+		for (j = 0; j<1; j++)
+		{
+			gridbuffer[j + 1 * i].Attributes = 6;
+			if (bodovi2[i][j] == 'X')
+				gridbuffer[j + 1 * i].Char.AsciiChar =219;
+				
+				
+        }
+}
+
+WriteConsoleOutput(out, gridbuffer, gridsz, zerozero, &gridrect);
+     }
+
+int bodovide()
+{
+     	
+	
+int i,j;
+	
+	CHAR_INFO gridbuffer[6];
+	COORD zerozero = { 0,0 }, gridsz = { 1,6 };
+	SMALL_RECT gridrect = { 45,10,46,16 };
+	HANDLE out;
+	out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+for (i = 0; i<6; i++)
+	{
+		for (j = 0; j<1; j++)
+		{
+			gridbuffer[j + 1 * i].Attributes = 6;
+			if (bodovi2[i][j] == 'X')
+				gridbuffer[j + 1 * i].Char.AsciiChar =219;
+				
+				
+        }
+}
+
+WriteConsoleOutput(out, gridbuffer, gridsz, zerozero, &gridrect);
+     }
+
