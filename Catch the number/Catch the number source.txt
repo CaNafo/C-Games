@@ -1,0 +1,361 @@
+
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<conio.h>
+#include<time.h>
+char arena[20][41] =                                    
+{ "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", 
+"X                                  XX  X", 
+"X              XX                      X", 
+"X                                      X", 
+"X         X      XXX                   X", 
+"X         X      X                     X", 
+"X         X      X                     X", 
+"X         XX X     XXXX              X X",
+"X                X       X             X",
+"X                       X              X",
+"X         XXXXXXXX       X             X",
+"X                                      X",
+"X                                      X",
+"X      XXXX                            X",
+"X                XX                    X",
+"X                                      X",
+"X                                      X",
+"X      XXXXXXXXXXXXXXXXXXXXXX          X",
+"X                                      X",
+"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" };
+int bod=0,ii,jj,vv,vrijeme,skor;
+int _arena(char s,int rez,int brojac,int r);
+void odlozi(clock_t a)
+{
+	clock_t start;
+	start = clock();
+	while (clock() - start<a)
+	{
+
+	}
+}
+main()
+{
+srand(time(NULL));
+	char a[] = "Dobrodosli !!!", b[] = "Igrica pocinje... ",ss[]="Igricu igrate na slova w,a,s,d",s;
+	int i,v=1,brojac=0,r=0,brz=40;
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	printf("                                                 ");
+	for (i = 0; a[i] != NULL; i++)
+	{
+		printf("%c", a[i]);
+
+		odlozi(100);
+	}
+
+   int h=18,bb;
+   int brojac1=0;
+	system("cls");
+	printf("                                            ");
+	
+	
+		for (i = 0; ss[i] != NULL; i++)
+	{
+		printf("%c", ss[i]);
+
+		odlozi(100);
+	}
+	printf("\n");
+		for (i = 0; b[i] != NULL; i++)
+	{
+		printf("%c", b[i]);
+
+		odlozi(100);
+	}
+	int rez=0,m,n,rez1=0,lo=0;
+	arena[h][v]='u';
+	m=rand() % 19;
+    n=rand() % 40;
+    if(m==0) m=1;
+	if(n>=38) n=38;
+arena[m][n]='1';
+ system("cls");	
+	while((lo=_arena(s,rez,brojac,r))>=0){
+		arena[h][v]='u';
+		if(kbhit())
+		{
+	   s=getch();
+	   
+	   if(s=='w' && h!=1) {
+	   	
+	   	arena[h][v]=' ';
+		h--;
+		if(arena[h][v]=='X')
+	 {printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	 	printf("                                         -3 Boda pa ti udaraj u zid!!!!!");odlozi(700); rez=rez-3;   h=17; v=1;
+	 }
+	 else
+	 {
+	arena[h][v]='u';
+  	if( h==m && v==n) 
+	{
+	rez++;
+	printf("\a");
+	r++;
+	
+	do{
+		m=rand() % 19;
+    n=rand() % 40;
+    if(m==0) m=1;
+	if(n>=38) n=38;
+            
+   }while(arena[m][n]=='X');
+   arena[m][n]='1'+rez%9;
+
+}
+}
+	
+}
+	   if(s=='s' && h!=18) {
+	   	
+	   	arena[h][v]=' ';
+		h++;
+		if(arena[h][v]=='X')
+	 {printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	 	printf("                                         -3 Boda pa ti udaraj u zid!!!!!"); odlozi(700); rez=rez-3;   h=17; v=1;
+	 }
+	 else
+	 {
+	arena[h][v]='u';
+		if( h==m && v==n) 
+	{
+	rez++;
+	r++;
+		printf("\a");	
+do{
+		m=rand() % 19;
+    n=rand() % 40;
+    if(m==0) m=1;
+	if(n>=38) n=38;
+ 
+   }while(arena[m][n]=='X');
+   arena[m][n]='1'+rez%9;
+
+}
+}
+}
+	   
+	   
+	   if(s=='d' && v!=38) {
+	   	
+	   	arena[h][v]=' ';
+		v++;
+		if(arena[h][v]=='X')
+	 {printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	 	printf("                                         -3 Boda pa ti udaraj u zid!!!!!");odlozi(700); rez=rez-3;   h=17; v=1;
+	 }
+	 else
+	 {
+	arena[h][v]='u';
+	 		if( h==m && v==n) 
+	{
+	rez++;
+	r++;
+		printf("\a");
+	do{
+		m=rand() % 19;
+    n=rand() % 40;
+    if(m==0) m=1;
+	if(n>=38) n=38;
+
+   }while(arena[m][n]=='X');
+   arena[m][n]='1'+rez%9;
+
+}
+}
+}
+	else if(s=='a' && v!=1)
+	{
+		arena[h][v]=' ';
+		v--;
+		if(arena[h][v]=='X')
+	 {printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	 	printf("                                         -3 Boda pa ti udaraj u zid!!!!!"); odlozi(700); rez=rez-3;   h=17; v=1;
+	 }
+	 else
+	 {
+	 arena[h][v]='u';
+		if( h==m && v==n) 
+	{
+	rez++;
+	r++;
+	printf("\a");
+	
+do{
+		m=rand() % 19;
+    n=rand() % 40;
+    if(m==0) m=1;
+	if(n>=38) n=38;
+
+   }while(arena[m][n]=='X');
+   arena[m][n]='1'+rez%9;
+
+}
+}
+}
+}
+   if(r!=0)
+ {
+ 	if(brojac<=3)
+ 	brojac=0;
+ 	else brojac=brojac-4;
+ 	
+ }
+ 
+_arena(s,rez,brojac,r);
+   
+   brojac1++;
+  
+   if(brojac1==brz)
+   {
+   
+   
+   brojac1=0;
+   brojac++;
+   system("cls");	printf("                                                       Nivo_Bodovi: %d\nSec: %d\n\nNivo: %d ",skor,vrijeme,bod); 
+   }
+
+	
+	r=0;
+	
+	 if(rez==10)
+   {
+   	rez=0;
+   	if(brz>0)
+   	{
+   	brz=brz-2;
+   }
+   	
+   	for(ii=1;ii<19;ii++)
+   	{
+   	for(jj=1;jj<39;jj++)
+   	{
+   	    if(arena[ii][jj]=='X') 
+		   arena[ii][jj]=' ';
+	}
+   	}
+   	    for(ii=0;ii<20;)
+   	    {
+   	    	jj=rand()%19;
+   	    	vv=rand()%40;
+   	    	if(jj>=1 && jj<=18 && vv>=1 && vv<39 && arena[jj][vv]!='1'+1)
+   	    	{
+   	    		arena[jj][vv]='X';
+   	    		
+   	    		ii++;
+			   }
+   	    	
+		   }
+   	    
+   }
+   if(bod>=3 && brojac==4)
+   {
+   	brojac++;
+   	 	for(ii=1;ii<19;ii++)
+   	{
+   	for(jj=1;jj<39;jj++)
+   	{
+   	    if(arena[ii][jj]=='X') 
+		   arena[ii][jj]=' ';
+	}
+   	}
+   	    for(ii=0;ii<20;)
+   	    {
+   	    	jj=rand()%19;
+   	    	vv=rand()%40;
+   	    	if(jj>=1 && jj<=18 && vv>=1 && vv<39 && arena[jj][vv]!='1'&& arena[jj][vv]!='2'&& arena[jj][vv]!='3'&& arena[jj][vv]!='4'&& arena[jj][vv]!='5'&& arena[jj][vv]!='u' && arena[jj][vv]!='6'&& arena[jj][vv]!='7'&& arena[jj][vv]!='8'&& arena[jj][vv]!='9')
+   	    	{
+   	    		arena[jj][vv]='X';
+   	    		
+   	    		ii++;
+			   }
+   	    	
+		   }
+   }
+   
+	
+    }
+	printf("\n");
+     
+     
+     
+     
+	
+}
+int _arena(char s,int rez,int brojac,int r)         //Arena
+{
+	int i, j, ucol = 10, ccol = 12, color = 8,v=1,rezultat=10;
+	CHAR_INFO gridbuffer[800];
+	COORD zerozero = { 0,0 }, gridsz = { 40,20 };
+	SMALL_RECT gridrect = { 10,2,50,22 };
+	HANDLE out;
+	out = GetStdHandle(STD_OUTPUT_HANDLE);
+	rezultat=rezultat-brojac;
+
+ 
+ if(rez==10) 
+ {
+ 
+ 	
+ bod++;
+
+}
+vrijeme=rezultat;
+skor=rez;
+
+   
+  
+	
+	for (i = 0; i<20; i++)
+	{
+		for (j = 0; j<40; j++)
+		{
+			gridbuffer[j + 40 * i].Attributes = color;
+			if (arena[i][j] == 'X')
+				gridbuffer[j + 40 * i].Char.AsciiChar = 219;
+			else if (arena[i][j] == 'u')
+			{
+				gridbuffer[j + 40 * i].Char.AsciiChar = 1;
+				gridbuffer[j + 40 * i].Attributes = ucol;
+			}
+			else if (arena[i][j] == ' ')
+				gridbuffer[j + 40 * i].Char.AsciiChar = ' ';
+			else if (arena[i][j] == 'b')
+				gridbuffer[j + 40 * i].Char.AsciiChar = 30;
+			else if (arena[i][j] == 'B')
+				gridbuffer[j + 40 * i].Char.AsciiChar = 31;
+			else if (arena[i][j] == 'c')
+			{
+				gridbuffer[j + 40 * i].Char.AsciiChar = 2;
+				gridbuffer[j + 40 * i].Attributes = ccol;
+			}
+			else
+			{
+				gridbuffer[j + 40 * i].Char.AsciiChar = arena[i][j];
+			}
+		}
+		
+	}
+	
+	WriteConsoleOutput(out, gridbuffer, gridsz, zerozero, &gridrect);
+	 if(rezultat==0)
+   {
+   	system("cls");
+   	printf("                          \n\n\n\n\n\n\n\n\n KRAJ IGRE-ITEKLO VAM JE VRIJEME!!!\n\n\n\n\n\n\n\n\n");
+   	
+   	odlozi(100);
+   	r=-1;
+   	return r;
+   	
+   	
+   	
+   }
+odlozi(20);
+}
